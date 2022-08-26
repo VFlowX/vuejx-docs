@@ -1,0 +1,22 @@
+{
+  "name": "docs",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "vitepress dev docs --port 3330 --open",
+    "build": "vitepress build docs",
+    "serve": "vitepress serve docs"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "mermaid": "^9.1.6",
+    "vitepress": "1.0.0-alpha.4",
+    "vitepress-plugin-mermaid": "^1.0.2"
+  },
+  "dependencies": {
+    "dotenv": "^16.0.1"
+  }
+}
