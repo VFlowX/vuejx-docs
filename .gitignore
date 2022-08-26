@@ -1,6 +1,6 @@
-docs/.vitepress/dist/*
 node_modules
 
 # Local Netlify folder
 .netlify
 .env
+docs/.vitepress/dist
