@@ -1,11 +1,23 @@
 import { log } from 'console'
 import type { Plugin } from 'vite'
 export function searchFix(): Plugin {
+  let config;
   return {
     name: 'VPAlgoliaSearchBox-fix',
     enforce: 'pre',
+    configResolved(resolvedConfig) {
+      // store the resolved config
+      config = resolvedConfig;
+    },
     transform(code, id) {
-      if (id.indexOf('VPAlgoliaSearchBox.vue') > -1) {
+      let detected = false;
+      if (config.command == 'serve') {
+        detected = id.indexOf('VPAlgoliaSearchBox.vue') > -1;
+      }
+      if (config.command == 'build') {
+        detected = id.endsWith('VPAlgoliaSearchBox.vue');
+      }
+      if (detected) {
         return `<script setup lang="ts">
         import type { DefaultTheme } from 'vitepress/theme'
         import { default as docsearch } from '@docsearch/js'

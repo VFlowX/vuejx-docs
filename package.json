@@ -12,7 +12,6 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "dotenv": "^16.0.2",
     "mermaid": "^9.1.6",
     "vitepress": "1.0.0-alpha.13",
     "vitepress-plugin-mermaid": "^1.0.2"
