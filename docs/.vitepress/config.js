@@ -1,4 +1,3 @@
-import 'dotenv/config'
 import MermaidPlugin from "vitepress-plugin-mermaid";
 import { defineConfig } from 'vitepress'
 export default defineConfig({
