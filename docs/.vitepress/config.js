@@ -26,10 +26,15 @@ export default defineConfig({
     },
     lastUpdatedText: 'Sửa lần cuối',
     outlineTitle: 'Trong trang này',
+    editLink: {
+      pattern: 'https://github.com/VFlowX/vuejx-docs/edit/master/docs/:path',
+      text: 'Sửa trang này trên GitHub'
+    }
   },
   markdown: {
     lineNumbers: true,
     config: MermaidPlugin,
+    langPrefix: 'a'
   },
   lastUpdated: true,
 })
@@ -69,6 +74,9 @@ function sidebarDocs() {
       text: 'Vuejx-binhth',
       collapsible: true,
       items: [{
+        text: "What's vuejx",
+        link: '/docs/vuejx/'
+      }, {
         text: 'Api',
         link: '/docs/vuejx/api/'
       }, {
@@ -120,8 +128,8 @@ function sidebarDocs() {
         text: 'Template',
         link: '/docs/vuejx/template'
       }, {
-        text: 'Snippet',
-        link: '/docs/vuejx/snippet'
+        text: 'Tips',
+        link: '/docs/vuejx/tips'
       }]
     },
     {
