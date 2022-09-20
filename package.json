@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "vitepress dev docs --port 3330 --open",
+    "dev": "vitepress dev docs --port 3330",
     "build": "vitepress build docs",
     "serve": "vitepress serve docs"
   },
@@ -12,8 +12,8 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "mermaid": "^9.1.6",
-    "vitepress": "1.0.0-alpha.13",
-    "vitepress-plugin-mermaid": "^1.0.2"
+    "mermaid": "^9.1.7",
+    "vitepress": "1.0.0-alpha.15",
+    "vitepress-plugin-mermaid": "^2.0.7"
   }
 }

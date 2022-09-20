@@ -19,11 +19,12 @@ Lấy dữ liệu từ DB
 ```
 
 ### Ví dụ
-```js
+```js 
 vm.$parent.sampleData(vm.db, vm.collection, null, null, vm.projection, { 'MoiTruongCoSo._id': vm.id })
 ```
 
-### Ví dụ
-```js
-vm.$parent.sampleData(vm.db, vm.collection, null, null, vm.projection, { 'MoiTruongCoSo._id': vm.id })
-```
+<style>
+  code  {
+    white-space: pre-wrap !important;
+  }
+</style>

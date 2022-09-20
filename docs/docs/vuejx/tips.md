@@ -44,3 +44,11 @@ async changeData(data) {
   }
 },
 ```
+
+
+
+<style>
+  code  {
+    white-space: pre-wrap !important;
+  }
+</style>

@@ -12,8 +12,14 @@
 ::: warning
 Docs này sẽ tập trung vào phần frontend. Dành cho dev sử dụng tìm kiếm thông tin.
 :::
-## [Component](component)
-Tổng hợp các component hiện có trong vuejx
-### [Form config](component/config/index)
+## [Api](api/)
+Tổng hợp các api có sẵn
 
-## [Template](template)
+## [Component](component)
+Tổng hợp các component có sẵn
+
+## [Template](template/)
+Khởi tạo dữ liệu
+
+## [Tips](tips)
+Tổng hợp tips and trick

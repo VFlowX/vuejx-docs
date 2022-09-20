@@ -1,6 +1,5 @@
-import MermaidPlugin from "vitepress-plugin-mermaid";
-import { defineConfig } from 'vitepress'
-export default defineConfig({
+import { withMermaid } from "vitepress-plugin-mermaid";
+export default withMermaid({
   title: 'Vuejx-doc',
   description: 'Programming with ease',
   lang: 'vi-VN',
@@ -32,9 +31,11 @@ export default defineConfig({
     }
   },
   markdown: {
-    lineNumbers: true,
-    config: MermaidPlugin,
-    langPrefix: 'a'
+    // lineNumbers: true,
+    langPrefix: 'a',
+    attrs: {
+      allowedAttributes: []
+    }
   },
   lastUpdated: true,
 })
@@ -45,27 +46,6 @@ function nav() {
     { text: 'Docs', link: '/docs/' },
     { text: 'Tips', link: '/tips/' },
     { text: 'About', link: '/about' }
-  ]
-}
-function sidebarProject() {
-  return [
-    {
-      text: 'Core app',
-      collapsible: true,
-      items: [{
-        text: 'Why?',
-        link: '/projects/core/'
-      }, {
-        text: 'Workflow',
-        link: '/projects/core/workflow'
-      }, {
-        text: 'Tech Stack',
-        link: '/projects/core/techstack'
-      }, {
-        text: 'TODO',
-        link: '/projects/core/todo'
-      }]
-    }
   ]
 }
 function sidebarDocs() {
@@ -126,7 +106,7 @@ function sidebarDocs() {
         }]
       }, {
         text: 'Template',
-        link: '/docs/vuejx/template'
+        link: '/docs/vuejx/template/'
       }, {
         text: 'Tips',
         link: '/docs/vuejx/tips'

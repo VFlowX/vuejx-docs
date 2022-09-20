@@ -68,3 +68,11 @@ Dùng để hiển thị dữ liệu object-key thành dạng bảng
   :groupByKeyArray="itemView.groupByKeyArray">
 </vuejx-view-khcn>
  ```
+
+
+ 
+<style>
+  code  {
+    white-space: pre-wrap !important;
+  }
+</style>
