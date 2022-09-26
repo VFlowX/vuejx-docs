@@ -1,3 +1,9 @@
+<style>
+  code  {
+    white-space: pre-wrap !important;
+  }
+</style>
+
 ## sampleData
 ::: info
 Lấy dữ liệu từ DB
@@ -23,8 +29,40 @@ Lấy dữ liệu từ DB
 vm.$parent.sampleData(vm.db, vm.collection, null, null, vm.projection, { 'MoiTruongCoSo._id': vm.id })
 ```
 
-<style>
-  code  {
-    white-space: pre-wrap !important;
-  }
-</style>
+## formatDate
+```js
+  window.VueJX.formatDate(new Date(parseInt(date)))
+```
+
+## query elastic
+```js
+let reportQuery = [
+  {
+    list_T_CongTrinhBVMT_01: {
+          report: false, type: "data", db: db, collection: 'T_CongTrinhBVMT',
+          body: {
+              "size": 1000,
+              "_source": { includes: [] }, "sort": [{ "modifiedAt": "desc" }],
+              "query": {
+                  "bool": {
+                      "filter": {  "match": {  "site": site }  },
+                      "must": [
+                          { "match": { "MoiTruongCoSo._source.MaDinhDanh": coSo_MaDinhDanh } },
+                          {
+                            match: {
+                              'LoaiHinhChatThai._source.MaMuc': '01'
+                            }
+                          },
+                          { "match": { "username": vm.user.username }  },
+                          { match: {  NamBaoCao: new Date().getFullYear() } },
+                          { "match": { "storage": 'regular' }  },
+                      ]
+                  }
+              }
+          }
+      }
+  },
+];
+
+const aggsData = await vm.$parent.dataReport(reportQuery);
+```

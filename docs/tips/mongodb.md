@@ -11,7 +11,7 @@ while (await cursor.hasNext()) {
 db.getSiblingDB("local").getCollection("oplog.rs").find({
 	"ns": "vuejx_cfg.vuejx_page",
 	"o2._id": ObjectId("5fd6d41ed29c7221b4004e65")
-})
+}).sort({"wall": -1})
 
 // Lấy từ ngày 2021-08-08
 db.getSiblingDB("local").getCollection("oplog.rs").find({
@@ -23,7 +23,7 @@ db.getSiblingDB("local").getCollection("oplog.rs").find({
 			$gt: ISODate("2021-08-08 00:00:00.000")
 		}
 	}]
-})
+}).sort({"wall": -1})
 ```
 ## Dùng setOnInsert để: Create if not exist. More info at mongodb doc
 ```js

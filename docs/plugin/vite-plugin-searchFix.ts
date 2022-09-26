@@ -1,4 +1,3 @@
-import { log } from 'console'
 import type { Plugin } from 'vite'
 export function searchFix(): Plugin {
   let config;
