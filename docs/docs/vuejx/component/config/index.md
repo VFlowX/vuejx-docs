@@ -6,6 +6,7 @@ Tài liệu đang được cập nhật (WIP).
 | type         | Miêu tả                      | Chi tiết config               | Chi tiết component                   |
 | :----------- | :--------------------------- | :---------------------------- | :----------------------------------- |
 | text         | input text bt                | [Input](#text)                | [Input](../form/text)                |
+| date         | input text bt                | [Date](#date)                 | [Date](../form/date)                 |
 | autocomplete | Chọn từ danh mục             | [autocomplete](#autocomplete) | [autocomplete](../form/autocomplete) |
 | label        | Chỉ là text ốp class cho đẹp | [Label](#label)               | [Label](../form/label)               |
 | textarea     | input textarea               | [Textarea](#textarea)         | [Textarea](../form/textarea)         |
@@ -22,6 +23,19 @@ Tài liệu đang được cập nhật (WIP).
   type: "text", // number
   class: "col-span-1",
   label_class: "leading-tight pb-1 truncate"
+}
+```
+
+## Date
+```js
+{
+  model: 'NgayThucHien',
+  label: 'Ngày thực hiện',
+  type: 'date',
+  stringDate: true, // date dạng string
+  class: 'col-span-1',
+  required: true,
+  required_title: 'Bắt buộc nhập số'
 }
 ```
 
