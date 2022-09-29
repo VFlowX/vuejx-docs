@@ -10,9 +10,9 @@ hero:
     - theme: brand
       text: Get Started
       link: /docs/vuejx/
-    - theme: alt
-      text: View tips
-      link: /tips/
+    # - theme: alt
+    #   text: View tips
+    #   link: /tips/
 features:
   - title: Document 
     details: Document for vuejx

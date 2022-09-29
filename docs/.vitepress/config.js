@@ -107,21 +107,23 @@ function sidebarDocs() {
       }, {
         text: 'Template',
         link: '/docs/vuejx/template/'
-      }, {
-        text: 'Tips',
-        link: '/docs/vuejx/tips'
-      }]
+      },
+        // {
+        // text: 'Tips',
+        // link: '/docs/vuejx/tips'
+        // }
+      ]
     },
-    {
-      text: "Deverloper's Tips",
-      collapsible: true,
-      items: [{
-        text: 'Javascript',
-        link: '/tips/javascript',
-      }, {
-        text: 'Mongodb',
-        link: '/tips/mongodb',
-      },]
-    },
+    // {
+    //   text: "Deverloper's Tips",
+    //   collapsible: true,
+    //   items: [{
+    //     text: 'Javascript',
+    //     link: '/tips/javascript',
+    //   }, {
+    //     text: 'Mongodb',
+    //     link: '/tips/mongodb',
+    //   },]
+    // },
   ]
 }
