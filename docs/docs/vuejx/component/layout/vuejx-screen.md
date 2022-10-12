@@ -23,30 +23,65 @@
 ## props
 ```js
 vm.demoActionConfig = [
-    {
-      action: 'Lưu',
-      access: [
-        "role_can_view"
-      ],
-      dest: {
-        TrangThai: {
-          _source: {
-            MaMuc: '01',
-            TenMuc: 'Hiệu lực',
-            type: 'C_TrangThaiQuyTrinh'
-          }
-        },
-        'MoiTruongCoSo': {
-          MaDinhDanh: maDinhDanhCoSo
+  {
+    action: 'Lưu',
+    access: [
+      "role_can_view"
+    ],
+    dest: {
+      TrangThai: {
+        _source: {
+          MaMuc: '01',
+          TenMuc: 'Hiệu lực',
+          type: 'C_TrangThaiQuyTrinh'
+        }
+      },
+      'MoiTruongCoSo': {
+        MaDinhDanh: maDinhDanhCoSo
+      }
+    }
+  }, ...formConfig.deleteAction ? [{
+    action: 'Xóa',
+    class: 'bg-red-700 leading-none font-semibold text-white mx-2 rounded px-4 py-2 focus:outline-none',
+    ignore_query: ['_id'],
+    confirm: 'Xác nhận lưu kho chính thức.',
+    dest: {
+      storage: 'trash'
+    }
+  }] : [], {
+    "action": "Duyệt",
+    "access": [
+      "LANH_DAO_CO_QUAN_QUAN_LY"
+    ],
+
+    // yêu cầu dữ liệu TrangThai._source.MaMuc = 04
+    "input": {
+      "key": "TrangThai._source.MaMuc",
+      "value": [
+        "04"
+      ]
+    },
+    "dest": {
+      "TrangThai": {
+        "_source": {
+          "MaMuc": "06",
+          "TenMuc": "Đã duyệt",
+          "type": "C_TrangThaiQuyTrinh"
         }
       }
-  }, ... formConfig.deleteAction ? [{
-      action: 'Xóa',
-      class: 'bg-red-700 leading-none font-semibold text-white mx-2 rounded px-4 py-2 focus:outline-none',
-      ignore_query: ['_id'],
-      confirm: 'Xác nhận lưu kho chính thức.',
-      dest: {
-        storage: 'trash'
-      }
-  }]: []]
+    },
+    "ext_field": {
+      "title": "Ý kiến lãnh đạo",
+      "class": "w-full custom-modal-component",
+      "value": [
+      {
+        "model": "YKien",
+        "label": "Ý kiến lãnh đạo",
+        "required": true,
+        "type": "textarea",
+        "class": "col-span-4"
+      }]
+    }
+  }
+]
 ```

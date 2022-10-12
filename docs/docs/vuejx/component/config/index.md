@@ -133,7 +133,16 @@ Tài liệu đang được cập nhật (WIP).
     viewType: "autocomplete",
     collection: 'C_ChucDanhHoiDong',
     model: 'ChucDanhHoiDong'
-  }],
+  }, {
+      title: 'Hiện trạng',
+      class: 'text-left',
+      classDefault: ['block', 'block'],
+      prefix: ['<b>Tên công trình: </b>', '<b>Hiện trạng sử dụng: </b>'],
+      value: '_source.TenCongTrinh,_source.HienTrangSuDung',
+      viewDefault: ['Chưa có', 'Chưa có'],
+      viewTypeElement: ['text', 'text'],
+      width: '200'
+  },],
   filter_options: [
   {
     fields: "input",
