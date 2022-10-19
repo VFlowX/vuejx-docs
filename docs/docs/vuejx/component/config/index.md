@@ -33,6 +33,7 @@ Tài liệu đang được cập nhật (WIP).
   label: 'Ngày thực hiện',
   type: 'date',
   stringDate: true, // date dạng string
+  outPutString: true, // maybe maybe maybe
   class: 'col-span-1',
   required: true,
   required_title: 'Bắt buộc nhập số'
