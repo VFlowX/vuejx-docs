@@ -1,6 +1,6 @@
 # Table
 ## [vuejx-table-simple-khcn](./vuejx-table-simple-khcn)
-Click on header or this [link](./vuejx-table-simple-khcn) to get more detail
+Xem chi tiết [tại đây](./vuejx-table-simple-khcn) 
 ## vuejx-table-simple-khcn-static
 ::: info
 Dùng để hiển thị dữ liệu thành bảng với dữ liệu mảng từ custom data
