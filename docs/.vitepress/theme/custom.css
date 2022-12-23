@@ -1,0 +1,11 @@
+code {
+  white-space : pre-wrap !important;
+}
+
+div.content-container:not(.custom) {
+  max-width: clamp(512px, 1280px, 100%) !important;
+}
+
+:root {
+  --vp-layout-max-width: 100%;
+}

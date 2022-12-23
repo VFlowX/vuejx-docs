@@ -1,5 +1,5 @@
 # Vuejx core - by binhth
-::: tip
+::: tip Thông tin
   Core được viết bởi binhth.  
   Frontend: sử dụng vue, render at runtime từ code lưu trong database  
   Backend: nodejs/deno  
@@ -7,9 +7,10 @@
   Tìm kiếm/thống kê: Elasticsearch  
   Deployment: docker  
   Proxy: Nginx  
+  Docs: Vitepress - by NTH
 :::
 
-::: warning
+::: warning Lưu ý
 Docs này sẽ tập trung vào phần frontend. Dành cho dev sử dụng tìm kiếm thông tin.
 :::
 ## [Api](api/)

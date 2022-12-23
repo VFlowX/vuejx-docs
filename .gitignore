@@ -4,3 +4,4 @@ node_modules
 .netlify
 .env
 docs/.vitepress/dist
+docs/.vitepress/cache
