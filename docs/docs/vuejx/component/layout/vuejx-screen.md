@@ -10,10 +10,40 @@
   ref="detail_component" :collection="collection" :config="formConfig"
   @dataChange="changeData" @pingDone="pingDone" 
   v-model="vuejxData" :demoaction="demoActionConfig" :customRedirect="true">
+  <template v-slot:array_YeuCauHoanThien="{ dataArrayModel, processArrayDelete, item }" :key="">
+    <div class="vuejx__table" v-if="dataArrayModel && dataArrayModel.length > 0">
+      <table class="vuejx__table___comp done___loading border-b w-full bg-white">
+        <thead class="w-full">
+          ...
+        </thead>
+        <tbody class="border-b w-full bg-white">
+          ...
+        </tbody>
+      </table>
+    </div>
+  </template>
+
+  <template v-slot:table_view_NhiemVuDuAn="{celldata}">
+    <div>
+      <vuejx-autocomplete :config="{
+            model: 'ChucDanhNhiemVu',
+            placeholder: 'Chọn chức danh nhiệm vụ',
+            modelView: 'object', label_class: '', multiple: false,
+            chips: false, required: false,
+            label: '', object: true, itemText: '_source.TenMuc', itemValue: '_source.MaMuc',
+            link: [ { db: 'CSDL_KHOAHOCCONGNGHE', collection: 'C_ChucDanhNhiemVu', condition: [] } ],
+            column: ['MaMuc', 'TenMuc', 'type'], sort: [ '_score' ],
+        }" :data="celldata._source" v-model="celldata._source">
+      </vuejx-autocomplete>
+    </div>
+  </template>
+
   <template v-slot:bottom="{ dataFormX }">
     <mt-quan-trac class="col-span-4" :ChiTieuQuanTrac="dataFormX.ChiTieuQuanTrac"
      collection="T_KetQuaQTMTDinhKyDN"></mt-quan-trac>
   </template>
+
+
   <template v-slot:action>
     <!-- custom action -->
   </template>
