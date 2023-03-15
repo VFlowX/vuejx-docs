@@ -16,11 +16,8 @@ Docs này sẽ tập trung vào phần frontend. Dành cho dev sử dụng tìm 
 ## [Api](api/)
 Tổng hợp các api có sẵn
 
-## [Component](component)
+## [Component](component/)
 Tổng hợp các component có sẵn
 
-## [Template](template/)
-Khởi tạo dữ liệu
-
-## [Tips](tips)
+## [Tips](./tips)
 Tổng hợp tips and trick
