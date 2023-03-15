@@ -5,7 +5,7 @@ hero:
   name: Vuejx-doc
   text: Developer experiences
   tagline: Make development great again
-  image: /cave.gif
+  image: /vue.svg
   actions:
     - theme: brand
       text: Get Started

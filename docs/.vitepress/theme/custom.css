@@ -1,11 +1,33 @@
 code {
-  white-space : pre-wrap !important;
+  white-space: pre-wrap !important;
+}
+::-webkit-scrollbar {
+  position: absolute;
+  width: 0.5em;
+  height: 1em;
 }
 
+::-webkit-scrollbar-track {
+  background: #ffffff;
+  border-radius: 100vw;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #bcc0c4;
+  border: #bcc0c4;
+  border-radius: 100vw;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #aaaaaa;
+}
+html {
+  overflow-y: overlay;
+}
+/* 
 div.content-container:not(.custom) {
   max-width: clamp(512px, 1280px, 100%) !important;
 }
-
 :root {
   --vp-layout-max-width: 100%;
-}
+} */

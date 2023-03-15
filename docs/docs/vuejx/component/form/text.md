@@ -8,13 +8,17 @@
 ::: info
   Nhập liệu bỏ space để nhập mã, email ...
 :::
-```html
+::: code-group
+
+```html [template]
 <input @input="data = removeEventSpaces($event)" :value="data"
  @keydown.space.prevent @paste="removeEventSpaces"/>
 ```
-```js
+```js [method]
 removeEventSpaces (e) {
   e.target.value = e.target.value.replace(/ /g, '');
   return e.target.value;
 },
 ```
+
+:::

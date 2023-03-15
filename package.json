@@ -12,8 +12,13 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@mermaid-js/mermaid-mindmap": "^9.3.0",
     "mermaid": "9.1.7",
-    "vitepress": "1.0.0-alpha.36",
-    "vitepress-plugin-mermaid": "^2.0.8"
+    "taze": "^0.9.0",
+    "vitepress": "1.0.0-alpha.59",
+    "vitepress-plugin-mermaid": "^2.0.10"
+  },
+  "dependencies": {
+    "glob": "^9.3.0"
   }
 }

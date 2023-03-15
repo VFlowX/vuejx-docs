@@ -1,54 +1,63 @@
 import { withMermaid } from "vitepress-plugin-mermaid";
-export default withMermaid({
-  title: 'Vuejx-doc',
-  description: 'Programming with ease',
-  lang: 'vi-VN',
-  themeConfig: {
-    nav: nav(),
-    sidebar: {
-      '/docs/vuejx/': sidebarDocs(),
-      '/tips/': sidebarDocs(),
-    },
-    footer: {
-      message: 'Early access.',
-      copyright: 'Copyright © 2022-present VFlowX'
-    },
-    logo: '/cave.gif',
-    socialLinks: [
-      { icon: 'github', link: 'https://github.com/VFlowX/vuejx-docs' },
-      { icon: 'discord', link: 'https://discord.gg/mmA6gBD8EF' },
-    ],
-    algolia: {
-      appId: process.env.ALGOLIA_APPLICATION_ID,
-      apiKey: process.env.ALGOLIA_SEARCH_API_KEY,
-      indexName: 'netlify_938869e8-c8c5-481e-9f44-e82221fa7fcf_master_all',
-    },
-    lastUpdatedText: 'Sửa lần cuối',
-    outlineTitle: 'Trong trang này',
-    editLink: {
-      pattern: 'https://github.com/VFlowX/vuejx-docs/edit/master/docs/:path',
-      text: 'Sửa trang này trên GitHub'
-    }
-  },
-  markdown: {
-    // lineNumbers: true,
-    langPrefix: 'a',
-    attrs: {
-      allowedAttributes: []
-    }
-  },
-  lastUpdated: true,
-})
+import { loadEnv } from 'vitepress'
+import { generateNav } from "../plugin/vitepress-plugin-custom";
 
-function nav() {
-  return [
-    { text: 'Home', link: '/' },
-    { text: 'Docs', link: '/docs/' },
-    { text: 'Tips', link: '/tips/' },
-    { text: 'About', link: '/about' }
-  ]
+const env = loadEnv('', process.cwd())
+export default withMermaid(async () => {
+  let config = await generateNav()
+  return {
+    title: 'Vuejx-doc',
+    description: 'Programming with ease',
+    lang: 'vi-VN',
+    themeConfig: {
+      nav: config.nav,
+      sidebar: {
+        '/docs/vuejx/': await sidebarDocs(),
+        '/docs/tips/': await sidebarTips(),
+      },
+      footer: {
+        message: 'Early access.',
+        copyright: 'Copyright © 2022-present VFlowX'
+      },
+      logo: '/vue.svg',
+      socialLinks: [
+        { icon: 'github', link: 'https://github.com/VFlowX/vuejx-docs' },
+        { icon: 'discord', link: 'https://discord.gg/mmA6gBD8EF' },
+      ],
+      algolia: {
+        appId: env.VITE_ALGOLIA_APPLICATION_ID,
+        apiKey: env.VITE_ALGOLIA_SEARCH_API_KEY,
+        indexName: env.VITE_ALGOLIA_INDEX_NAME,
+      },
+      lastUpdatedText: 'Sửa lần cuối',
+      outlineTitle: 'Trong trang này',
+      editLink: {
+        pattern: 'https://github.com/VFlowX/vuejx-docs/edit/master/docs/:path',
+        text: 'Sửa trang này trên GitHub'
+      }
+    },
+    markdown: {
+      lineNumbers: true,
+      langPrefix: 'a',
+      attrs: {
+        allowedAttributes: []
+      },
+    },
+    lastUpdated: true,
+  }
 }
-function sidebarDocs() {
+
+)
+
+// function nav() {
+// return [
+//   { text: 'Home', link: '/' },
+//   { text: 'Docs', link: '/docs/' },
+//   { text: 'Tips', link: '/tips/' },
+//   { text: 'About', link: '/about' }
+// ]
+// }
+async function sidebarDocs() {
   return [
     {
       text: 'Vuejx-binhth',
@@ -61,7 +70,7 @@ function sidebarDocs() {
         link: '/docs/vuejx/api/'
       }, {
         text: 'Component',
-        link: '/docs/vuejx/component',
+        link: '/docs/vuejx/component/',
         items: [{
           text: 'Config',
           collapsible: true,
@@ -125,5 +134,26 @@ function sidebarDocs() {
     //     link: '/tips/mongodb',
     //   },]
     // },
-  ]
+  ];
+}
+async function sidebarTips() {
+  return [
+    {
+      text: 'JS',
+      // collapsible: true,
+      link: '/docs/tips/javascript'
+    },
+    {
+      text: "Mongodb",
+      link: '/docs/tips/mongodb'
+      // collapsible: true,
+      // items: [{
+      //   text: 'Javascript',
+      //   link: '/tips/javascript',
+      // }, {
+      //   text: 'Mongodb',
+      //   link: '/tips/mongodb',
+      // },]
+    },
+  ];
 }
