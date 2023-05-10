@@ -14,11 +14,11 @@
   "devDependencies": {
     "@mermaid-js/mermaid-mindmap": "^9.3.0",
     "mermaid": "9.1.7",
-    "taze": "^0.9.0",
-    "vitepress": "1.0.0-alpha.59",
+    "taze": "^0.10.1",
+    "vitepress": "1.0.0-alpha.75",
     "vitepress-plugin-mermaid": "^2.0.10"
   },
   "dependencies": {
-    "glob": "^9.3.0"
+    "glob": "^10.2.3"
   }
 }
