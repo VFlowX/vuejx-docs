@@ -1,8 +1,8 @@
 import { withMermaid } from "vitepress-plugin-mermaid";
-import { loadEnv } from 'vitepress'
+// import { loadEnv } from 'vitepress'
 import { generateNav } from "../plugin/vitepress-plugin-custom";
 
-const env = loadEnv('', process.cwd())
+// const env = loadEnv('', process.cwd())
 export default withMermaid(async () => {
   let config = await generateNav()
   return {
@@ -24,10 +24,13 @@ export default withMermaid(async () => {
         { icon: 'github', link: 'https://github.com/VFlowX/vuejx-docs' },
         { icon: 'discord', link: 'https://discord.gg/mmA6gBD8EF' },
       ],
-      algolia: {
-        appId: env.VITE_ALGOLIA_APPLICATION_ID,
-        apiKey: env.VITE_ALGOLIA_SEARCH_API_KEY,
-        indexName: env.VITE_ALGOLIA_INDEX_NAME,
+      // algolia: {
+      //   appId: env.VITE_ALGOLIA_APPLICATION_ID,
+      //   apiKey: env.VITE_ALGOLIA_SEARCH_API_KEY,
+      //   indexName: env.VITE_ALGOLIA_INDEX_NAME,
+      // },
+      search: {
+        provider: 'local'
       },
       lastUpdatedText: 'Sửa lần cuối',
       outlineTitle: 'Trong trang này',
