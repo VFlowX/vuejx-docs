@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "vitepress dev docs --port 3330",
     "build": "vitepress build docs",
-    "serve": "vitepress serve docs"
+    "serve": "vitepress serve docs",
+    "taze": "taze major -r -I"
   },
   "keywords": [],
   "author": "",
@@ -14,11 +15,11 @@
   "devDependencies": {
     "@mermaid-js/mermaid-mindmap": "^9.3.0",
     "mermaid": "9.1.7",
-    "taze": "^0.10.1",
-    "vitepress": "1.0.0-alpha.75",
+    "taze": "^0.10.2",
+    "vitepress": "1.0.0-beta.1",
     "vitepress-plugin-mermaid": "^2.0.10"
   },
   "dependencies": {
-    "glob": "^10.2.3"
+    "glob": "^10.2.7"
   }
 }
